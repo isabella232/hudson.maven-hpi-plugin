@@ -37,9 +37,6 @@ import java.util.Set;
 
 /**
  * @author Kohsuke Kawaguchi
- * @deprecated
- *      As the annotation processing has switched to JSR-269,
- *      we no longer need this code.
  */
 public class AnnotationProcessorFactoryImpl implements AnnotationProcessorFactory {
 
