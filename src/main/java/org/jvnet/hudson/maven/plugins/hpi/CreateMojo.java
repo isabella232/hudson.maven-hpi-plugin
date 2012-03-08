@@ -89,7 +89,7 @@ public class CreateMojo extends AbstractMojo {
      * @parameter expression="${version}" default-value="1.0-SNAPSHOT"
      * @required
      */
-    private String version;
+    private String version ="1.0-SNAPSHOT";
 
     /**
      * @parameter expression="${packageName}" alias="package"
