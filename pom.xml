@@ -43,9 +43,9 @@
     </licenses>
     
     <scm>
-        <connection>scm:git:git://github.com/hudson/maven-hpi-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:hudson/maven-hpi-plugin.git</developerConnection>
-        <url>https://github.com/hudson/maven-hpi-plugin</url>
+        <connection>scm:git:git://git.eclipse.org/gitroot/hudson/org.eclipse.hudson.maven-hpi-plugin.git</connection>
+        <developerConnection>scm:git:git://git.eclipse.org/gitroot/hudson/org.eclipse.hudson.maven-hpi-plugin.git</developerConnection>
+        <url>http://git.eclipse.org/c/hudson/org.eclipse.hudson.maven-hpi-plugin.git/</url>
     </scm>
 
     <developers>
