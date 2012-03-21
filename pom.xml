@@ -78,17 +78,18 @@
         <ant-apache-regexp.version>1.8.3</ant-apache-regexp.version>
         <wagon-ssh.version>2.2</wagon-ssh.version>
         
-       <maven-core.version>3.0.4</maven-core.version>
-       <maven-model.version>3.0.4</maven-model.version>
-       <maven-archiver.version>2.4.1</maven-archiver.version>
+        <maven-core.version>3.0.4</maven-core.version>
+        <maven-model.version>3.0.4</maven-model.version>
+        <maven-archiver.version>2.4.1</maven-archiver.version>
        
-       <maven-archetype-core.version>1.0-alpha-4</maven-archetype-core.version>
+        <maven-archetype-core.version>1.0-alpha-4</maven-archetype-core.version>
        
-       <plexus-archiver.version>2.0</plexus-archiver.version>
+        <plexus-archiver.version>2.0</plexus-archiver.version>
+        <plexus-utils.version>3.0</plexus-utils.version>
  
-       <maven-jetty-plugin.version>6.1.1</maven-jetty-plugin.version>
+        <maven-jetty-plugin.version>6.1.1</maven-jetty-plugin.version>
        
-       <plexus-interactivity-api.version>1.0-alpha-6</plexus-interactivity-api.version>
+        <plexus-interactivity-api.version>1.0-alpha-6</plexus-interactivity-api.version>
     </properties>
 
     <build>
@@ -206,6 +207,13 @@
             <version>${plexus-archiver.version}</version>
             <type>jar</type>
         </dependency>
+        
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>${plexus-utils.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.mortbay.jetty</groupId>
             <artifactId>maven-jetty-plugin</artifactId>
