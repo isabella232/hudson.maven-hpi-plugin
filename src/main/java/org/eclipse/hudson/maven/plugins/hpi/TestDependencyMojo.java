@@ -13,7 +13,7 @@
  *
  *******************************************************************************/ 
 
-package org.jvnet.hudson.maven.plugins.hpi;
+package org.eclipse.hudson.maven.plugins.hpi;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.artifact.Artifact;

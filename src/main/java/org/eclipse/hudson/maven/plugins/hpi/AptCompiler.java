@@ -14,7 +14,7 @@
  *
  *******************************************************************************/ 
 
-package org.jvnet.hudson.maven.plugins.hpi;
+package org.eclipse.hudson.maven.plugins.hpi;
 
 import org.codehaus.plexus.compiler.CompilerConfiguration;
 import org.codehaus.plexus.compiler.CompilerException;

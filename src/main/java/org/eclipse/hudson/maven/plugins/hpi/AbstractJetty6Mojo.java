@@ -1,5 +1,5 @@
 
-package org.jvnet.hudson.maven.plugins.hpi;
+package org.eclipse.hudson.maven.plugins.hpi;
 
 /*
  * Copyright 2001-2005 The Apache Software Foundation.

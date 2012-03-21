@@ -13,7 +13,7 @@
  *
  *******************************************************************************/ 
 
-package org.jvnet.hudson.maven.plugins.hpi;
+package org.eclipse.hudson.maven.plugins.hpi;
 
 import org.apache.maven.plugin.CompilationFailureException;
 import org.apache.maven.plugin.MojoExecutionException;

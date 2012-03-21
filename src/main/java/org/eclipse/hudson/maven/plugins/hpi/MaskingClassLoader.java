@@ -13,7 +13,7 @@
  *
  *******************************************************************************/ 
 
-package org.jvnet.hudson.maven.plugins.hpi;
+package org.eclipse.hudson.maven.plugins.hpi;
 
 import java.io.IOException;
 import java.net.URL;

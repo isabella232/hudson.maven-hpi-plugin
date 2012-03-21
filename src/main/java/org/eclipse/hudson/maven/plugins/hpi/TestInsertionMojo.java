@@ -13,7 +13,7 @@
  *
  *******************************************************************************/ 
 
-package org.jvnet.hudson.maven.plugins.hpi;
+package org.eclipse.hudson.maven.plugins.hpi;
 
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.plugin.AbstractMojo;
@@ -84,7 +84,7 @@ public class TestInsertionMojo extends AbstractMojo {
             w.println("    parameters.put(\"artifactId\","+quote(project.getArtifactId())+");");
             w.println("    parameters.put(\"outputDirectory\","+quote(project.getBuild().getOutputDirectory())+");");
             w.println("    parameters.put(\"testOutputDirectory\","+quote(project.getBuild().getTestOutputDirectory())+");");
-            w.println("    return new org.jvnet.hudson.test.PluginAutomaticTestBuilder().build(parameters);");
+            w.println("    return new org.eclipse.hudson.test.PluginAutomaticTestBuilder().build(parameters);");
             w.println("  }");
             w.println("}");
             w.close();

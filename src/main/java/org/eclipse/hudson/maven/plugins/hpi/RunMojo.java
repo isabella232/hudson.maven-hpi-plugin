@@ -12,7 +12,7 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 //========================================================================
-package org.jvnet.hudson.maven.plugins.hpi;
+package org.eclipse.hudson.maven.plugins.hpi;
 
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.artifact.factory.ArtifactFactory;
@@ -145,7 +145,7 @@ public class RunMojo extends AbstractJetty6Mojo {
             if(a.getArtifactId().equals("hudson-war") && a.getType().equals("war")) {
                 webApp = a.getFile();
             }
-            if(a.getGroupId().equals("org.jvnet.hudson.main"))
+            if(a.getGroupId().equals("org.eclipse.hudson.main"))
                 hudsonArtifacts.add(a);
         }
 
@@ -154,7 +154,7 @@ public class RunMojo extends AbstractJetty6Mojo {
                 "Unable to locate hudson.war. Add the following dependency in your POM:\n" +
                 "\n" +
                 "<dependency>\n" +
-                "  <groupId>org.jvnet.hudson.main</groupId>\n" +
+                "  <groupId>org.eclipse.hudson.main</groupId>\n" +
                 "  <artifactId>hudson-war</artifactId>\n" +
                 "  <type>war</type>\n" +
                 "  <version>1.293<!-- replace this with the version you want--></version>\n" +
