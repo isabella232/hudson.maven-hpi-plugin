@@ -11,11 +11,11 @@
             <id>default</id>
             <phases>
               <process-resources>org.apache.maven.plugins:maven-resources-plugin:resources</process-resources>
-              <compile>org.jvnet.hudson.tools:maven-hpi-plugin:apt-compile</compile>
+              <compile>org.eclipse.hudson.tools:maven-hpi-plugin:apt-compile</compile>
               <process-test-resources>org.apache.maven.plugins:maven-resources-plugin:testResources</process-test-resources>
-              <test-compile>org.apache.maven.plugins:maven-compiler-plugin:testCompile,org.jvnet.hudson.tools:maven-hpi-plugin:test-hpl,org.jvnet.hudson.tools:maven-hpi-plugin:resolve-test-dependencies</test-compile>
+              <test-compile>org.apache.maven.plugins:maven-compiler-plugin:testCompile,org.eclipse.hudson.tools:maven-hpi-plugin:test-hpl,org.eclipse.hudson.tools:maven-hpi-plugin:resolve-test-dependencies</test-compile>
               <test>org.apache.maven.plugins:maven-surefire-plugin:test</test>
-              <package>org.jvnet.hudson.tools:maven-hpi-plugin:hpi</package>
+              <package>org.eclipse.hudson.tools:maven-hpi-plugin:hpi</package>
               <install>org.apache.maven.plugins:maven-install-plugin:install</install>
               <deploy>org.apache.maven.plugins:maven-deploy-plugin:deploy</deploy>
             </phases>
@@ -38,7 +38,7 @@
     <component>
       <role>org.codehaus.plexus.compiler.Compiler</role>
       <role-hint>hpi-apt</role-hint>
-      <implementation>org.jvnet.hudson.maven.plugins.hpi.AptCompiler</implementation>
+      <implementation>org.eclipse.hudson.maven.plugins.hpi.AptCompiler</implementation>
       <description />
     </component>
   </components>
