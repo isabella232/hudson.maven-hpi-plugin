@@ -29,7 +29,6 @@ import java.io.IOException;
  * When a build is performed, the {@link perform(AbstractBuild, Launcher, BuildListener)} method
  * will be invoked. 
  *
- * @author Kohsuke Kawaguchi
  */
 public class HelloWorldBuilder extends Builder {
 
