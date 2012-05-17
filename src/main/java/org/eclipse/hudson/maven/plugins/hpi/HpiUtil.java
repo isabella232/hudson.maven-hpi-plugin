@@ -22,7 +22,7 @@ import java.util.jar.Manifest;
 
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.plugin.logging.Log;
-import org.kohsuke.stapler.framework.io.IOException2;
+//import org.kohsuke.stapler.framework.io.IOException2;
 
 /**
  * @author Kohsuke Kawaguchi
@@ -57,7 +57,7 @@ class HpiUtil {
                 jar.close();
             }
         } catch (IOException e) {
-            throw new IOException2("Failed to open artifact "+artifact.toString()+" at "+artifact.getFile(),e);
+            throw new IOException("Failed to open artifact "+artifact.toString()+" at "+artifact.getFile(),e);
         }
     }
 
