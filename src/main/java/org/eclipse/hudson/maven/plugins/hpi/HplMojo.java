@@ -30,6 +30,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.apache.maven.archiver.MavenArchiveConfiguration;
+import org.apache.maven.archiver.MavenArchiver;
+import org.apache.maven.artifact.DependencyResolutionRequiredException;
 
 /**
  * Generate .hpl file.
@@ -45,6 +50,8 @@ public class HplMojo extends AbstractHpiMojo {
      * @parameter expression="${hudsonHome}
      */
     private File hudsonHome;
+    
+    private MavenArchiveConfiguration archive = new MavenArchiveConfiguration();
 
     public void setHudsonHome(File hudsonHome) {
         this.hudsonHome = hudsonHome;
@@ -61,7 +68,11 @@ public class HplMojo extends AbstractHpiMojo {
 
         PrintWriter printWriter = null;
         try {
-            Manifest mf = new Manifest();
+            //Manifest mf = new Manifest();
+            MavenArchiver ma = new MavenArchiver();
+            Manifest mf;
+             
+            mf = ma.getManifest(project, archive.getManifest());
             Section mainSection = mf.getMainSection();
             setAttributes(mainSection);
 
@@ -71,19 +82,27 @@ public class HplMojo extends AbstractHpiMojo {
             // we want resources to be picked up before target/classes,
             // so that the original (not in the copy) will be picked up first.
             for (Resource r : (List<Resource>) project.getBuild().getResources()) {
-                if(buf.length()>0)
+                if(buf.length()>0) {
                     buf.append(',');
-                if(new File(project.getBasedir(),r.getDirectory()).exists())
+                }
+                if(new File(project.getBasedir(),r.getDirectory()).exists()) {
                     buf.append(r.getDirectory());
+                }
             }
-            if(buf.length()>0)
+            if(buf.length()>0) {
                 buf.append(',');
+            }
             buf.append(new File(project.getBuild().getOutputDirectory()).getAbsoluteFile());
             for (Artifact a : getResolvedDependencies()) {
-                if ("provided".equals(a.getScope()))
-                    continue;   // to simulate the real environment, drop the "provided" scope dependencies from the list
-                if ("pom".equals(a.getType()))
-                    continue;   // pom dependency is sometimes used so that one can depend on its transitive dependencies
+                if ("provided".equals(a.getScope())) {
+                    continue;
+                }   // to simulate the real environment, drop the "provided" scope dependencies from the list
+                if ("test".equals(a.getScope())){
+                     continue;   // to simulate the real environment, drop the "test" scope dependencies from the list
+                }
+                if ("pom".equals(a.getType())) {
+                    continue;
+                }   // pom dependency is sometimes used so that one can depend on its transitive dependencies
                 buf.append(',').append(a.getFile());
             }
             mainSection.addAttributeAndCheck(new Attribute("Libraries",buf.toString()));
@@ -96,6 +115,8 @@ public class HplMojo extends AbstractHpiMojo {
         } catch (ManifestException e) {
             throw new MojoExecutionException("Error preparing the manifest: " + e.getMessage(), e);
         } catch (IOException e) {
+            throw new MojoExecutionException("Error preparing the manifest: " + e.getMessage(), e);
+        } catch (DependencyResolutionRequiredException e) {
             throw new MojoExecutionException("Error preparing the manifest: " + e.getMessage(), e);
         } finally {
             IOUtil.close(printWriter);

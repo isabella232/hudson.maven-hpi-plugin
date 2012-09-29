@@ -29,7 +29,7 @@ import org.apache.maven.plugin.logging.Log;
  */
 class HpiUtil {
 
-    private static final String HUDSON_CORE_GROUP_ID = "org.eclipse.hudson.main";
+    private static final String HUDSON_CORE_GROUP_ID = "org.eclipse.hudson";
     private static final String HUDSON_CORE_ARTIFACT_ID = "hudson-core";
 
     private static final String[] HUDSON_PLUGIN_HEADERS = {"Plugin-Class","Plugin-Version"};
